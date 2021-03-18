@@ -103,6 +103,7 @@ SOUTH_NODE = 'South Node'
 SYZYGY = 'Syzygy'
 PARS_FORTUNA = 'Pars Fortuna'
 NO_PLANET = 'None'
+QUESTION = 'Question'
 
 # Object movement
 DIRECT = 'Direct'
