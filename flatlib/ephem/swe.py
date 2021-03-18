@@ -29,7 +29,8 @@ SWE_OBJECTS = {
     const.NEPTUNE: 8,
     const.PLUTO: 9,
     const.CHIRON: 15,
-    const.NORTH_NODE: 11
+    const.NORTH_NODE: 11,
+    const.QUESTION: 55
 }
 
 # Map house systems
