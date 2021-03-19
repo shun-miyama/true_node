@@ -31,7 +31,6 @@ SWE_OBJECTS = {
     const.CHIRON: 15,
     const.NORTH_NODE: 11,
     const.JUNO: 19,
-    const.VERTEX: 55
 }
 
 # Map house systems
