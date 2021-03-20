@@ -30,7 +30,7 @@ SWE_OBJECTS = {
     const.PLUTO: 9,
     const.CHIRON: 15,
     const.NORTH_NODE: 11,
-    const.JUNO: 50,
+    const.JUNO: 19,
 }
 
 # Map house systems
@@ -111,6 +111,7 @@ def sweHouses(jd, lat, lon, hsys):
         {'id': const.MC, 'lon': ascmc[1]},
         {'id': const.DESC, 'lon': angle.norm(ascmc[0] + 180)},
         {'id': const.IC, 'lon': angle.norm(ascmc[1] + 180)}
+        {'id': const.VERTEX, 'lon': ascmc[3]}
     ]
     return (houses, angles)
 
@@ -122,7 +123,8 @@ def sweHousesLon(jd, lat, lon, hsys):
         ascmc[0],
         ascmc[1],
         angle.norm(ascmc[0] + 180),
-        angle.norm(ascmc[1] + 180)
+        angle.norm(ascmc[1] + 180),
+        ascmc[3]
     ]
     return (hlist, angles)
 
