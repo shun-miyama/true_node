@@ -11,7 +11,7 @@ from setuptools import find_packages
 setup(
     # Project
     name = 'flatlib',
-    version = '0.2.2-dev',
+    version = '0.2.3',
     
     # Sources
     packages = find_packages(),
