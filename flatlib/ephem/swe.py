@@ -64,7 +64,7 @@ def setPath(path):
 def sweObject(obj, jd):
     """ Returns an object from the Ephemeris. """
     sweObj = SWE_OBJECTS[obj]
-    sweList = swisseph.calc_ut(jd, sweObj)
+    sweList, flg = swisseph.calc_ut(jd, sweObj)
     return {
         'id': obj,
         'lon': sweList[0],
@@ -76,7 +76,7 @@ def sweObject(obj, jd):
 def sweObjectLon(obj, jd):
     """ Returns the longitude of an object. """
     sweObj = SWE_OBJECTS[obj]
-    sweList = swisseph.calc_ut(jd, sweObj)
+    sweList, flg = swisseph.calc_ut(jd, sweObj)
     return sweList[0]
 
 def sweNextTransit(obj, jd, lat, lon, flag):
@@ -137,8 +137,8 @@ def sweHousesLon(jd, lat, lon, hsys):
 
 def sweFixedStar(star, jd):
     """ Returns a fixed star from the Ephemeris. """
-    sweList = swisseph.fixstar_ut(star, jd)
-    mag = swisseph.fixstar_mag(star)
+    sweList, stnam, flg = swisseph.fixstar2_ut(star, jd)
+    mag = swisseph.fixstar2_mag(star)
     return {
         'id': star,
         'mag': mag,
