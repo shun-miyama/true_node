@@ -23,7 +23,7 @@ setup(
     },
     
     # Dependencies
-    install_requires = ['pyswisseph@git+ssh://git@github.com/shun-miyama/seph-2.00.00-2#egg=pyswisseph'],
+    install_requires = ['pyswisseph@git://git@github.com/shun-miyama/seph-2.00.00-2#egg=pyswisseph'],
     
     # Metadata
     description = 'Python library for Traditional Astrology',
