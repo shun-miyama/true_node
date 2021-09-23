@@ -1,14 +1,10 @@
 """
     This file is part of flatlib - (C) FlatAngle
     Author: João Ventura (flatangleweb@gmail.com)
-
-
     This module implements a simple interface with the C
     Swiss Ephemeris using the pyswisseph library.
-
     The pyswisseph library must be already installed and
     accessible.
-
 """
 
 import swisseph
@@ -64,7 +60,7 @@ def setPath(path):
 def sweObject(obj, jd):
     """ Returns an object from the Ephemeris. """
     sweObj = SWE_OBJECTS[obj]
-    sweList, flg = swisseph.calc_ut(jd, sweObj)
+    sweList = swisseph.calc_ut(jd, sweObj)
     return {
         'id': obj,
         'lon': sweList[0],
@@ -76,13 +72,12 @@ def sweObject(obj, jd):
 def sweObjectLon(obj, jd):
     """ Returns the longitude of an object. """
     sweObj = SWE_OBJECTS[obj]
-    sweList, flg = swisseph.calc_ut(jd, sweObj)
+    sweList = swisseph.calc_ut(jd, sweObj)
     return sweList[0]
 
 def sweNextTransit(obj, jd, lat, lon, flag):
     """ Returns the julian date of the next transit of
     an object. The flag should be 'RISE' or 'SET'.
-
     """
     sweObj = SWE_OBJECTS[obj]
     flag = swisseph.CALC_RISE if flag == 'RISE' else swisseph.CALC_SET
@@ -137,8 +132,8 @@ def sweHousesLon(jd, lat, lon, hsys):
 
 def sweFixedStar(star, jd):
     """ Returns a fixed star from the Ephemeris. """
-    sweList, stnam, flg = swisseph.fixstar2_ut(star, jd)
-    mag = swisseph.fixstar2_mag(star)
+    sweList = swisseph.fixstar_ut(star, jd)
+    mag = swisseph.fixstar_mag(star)
     return {
         'id': star,
         'mag': mag,
