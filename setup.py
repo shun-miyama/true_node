@@ -11,7 +11,7 @@ from setuptools import find_packages
 setup(
     # Project
     name = 'flatlib',
-    version = '0.2.3',
+    version = '0.2.2-dev',
     
     # Sources
     packages = find_packages(),
@@ -23,7 +23,7 @@ setup(
     },
     
     # Dependencies
-    install_requires=['pyswisseph==2.08.00-1'],
+    install_requires = ['pyswisseph@git+ssh://git@github.com/shun-miyama/seph-2.00.00-2@v2.00.00-2#egg=pyswisseph'],
     
     # Metadata
     description = 'Python library for Traditional Astrology',
